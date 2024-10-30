@@ -34,9 +34,9 @@ It is not better, nor necessarily worse, than the original, it just serves a dif
 
 <table style="width:100%;">
   <tr>
-    <td style="width:33%;"><img src="https://raw.githubusercontent.com/TerminalMC/Framework/HEAD/assets/images/showcase/command_01.png" style="width:100%;"></td>
-    <td style="width:33%;"><img src="https://raw.githubusercontent.com/TerminalMC/Framework/HEAD/assets/images/showcase/config_01.png" style="width:100%;"></td>
-    <td style="width:33%;"><img src="https://raw.githubusercontent.com/TerminalMC/Framework/HEAD/assets/images/showcase/config_02.png" style="width:100%;"></td>
+    <td style="width:33%;"><img src="https://raw.githubusercontent.com/TerminalMC/Framework/HEAD/assets/images/command_01.png" style="width:100%;"></td>
+    <td style="width:33%;"><img src="https://raw.githubusercontent.com/TerminalMC/Framework/HEAD/assets/images/config_01.png" style="width:100%;"></td>
+    <td style="width:33%;"><img src="https://raw.githubusercontent.com/TerminalMC/Framework/HEAD/assets/images/config_02.png" style="width:100%;"></td>
   </tr>
 </table>
 
