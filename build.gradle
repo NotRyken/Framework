@@ -5,12 +5,31 @@ plugins {
     id("net.darkhax.curseforgegradle") version("${curseforgegradle_version}")
     id("com.github.breadmoirai.github-release") version("${githubrelease_version}")
     id("org.ajoberstar.grgit.service") version("${grgitservice_version}")
-    id("net.neoforged.licenser") version("${licenser_version}") apply false
+    id("org.cadixdev.licenser") version("${licenser_version}")
 }
 
 subprojects {
     version = mod_version
     group = mod_group
+
+    // License headers
+    apply(plugin: "org.cadixdev.licenser")
+    license {
+        // This can be done in multiloader-common.gradle but only if the
+        // "matching" method is not used (throws a pile of weird errors).
+        // Also, NeoForge's update of the plugin can't handle matching at all.
+        include("**/*.java") // Java files only
+        header = rootProject.file("NOTICE")
+        properties {
+            project_name = mod_name
+            owner_name = mod_owner
+            year = java.time.LocalDate.now().getYear().toString()
+        }
+        // Dual-licensing
+        matching(includes: ["**/MixinMinecraft.java", "**/MixinTitleScreen.java"]) {
+            header = rootProject.file("NOTICE_MPL-2.0")
+        }
+    }
 
     // Publishing
     if (name != "common") {

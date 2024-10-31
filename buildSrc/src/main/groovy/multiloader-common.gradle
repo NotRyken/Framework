@@ -1,7 +1,6 @@
 plugins {
     id("java-library")
     id("maven-publish")
-    id("net.neoforged.licenser")
 }
 
 base {
@@ -133,16 +132,6 @@ processResources {
         expand expandProps
     }
     inputs.properties(expandProps)
-}
-
-license {
-    include '**/*.java' // Apply license header ONLY to Java files
-    header = rootProject.file("NOTICE")
-    properties {
-        project_name = mod_name
-        owner_name = mod_owner
-        year = java.time.LocalDate.now().getYear().toString()
-    }
 }
 
 publishing {
