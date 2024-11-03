@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Config {
@@ -85,10 +86,10 @@ public class Config {
         public static final String defaultItemOption = BuiltInRegistries.ITEM.getKey(Items.STONE).toString();
         public String itemOption = defaultItemOption;
         
-        public static final List<CustomObject> defaultCustomObjectListExample = List.of(
+        public static final List<CustomObject> defaultCustomObjectListExample = new ArrayList<>(List.of(
                 new CustomObject("one", 1),
                 new CustomObject("two", 2)
-        );
+        ));
         public List<CustomObject> customObjectListExample = defaultCustomObjectListExample;
     }
 
