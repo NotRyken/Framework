@@ -7,52 +7,87 @@
   "key.framework.group": "Framework",
   "key.framework.group.example": "Example Key",
 
-  "message.framework.go_modrinth": "View on Modrinth",
-  "message.framework.install_cloth": "Install Cloth Config API to access mod options",
-  "message.framework.install_yacl": "Install Yet Another Config Lib to access mod options",
+  "message.framework.viewModrinth": "View on Modrinth",
+  "message.framework.installCloth": "Install Cloth Config API to access mod options",
+  "message.framework.installYacl": "Install Yet Another Config Lib to access mod options",
 
-  "option.framework.first": "First category",
-  "option.framework.first.boolean_example": "Boolean option",
-  "option.framework.first.boolean_example.false": "Negative",
-  "option.framework.first.boolean_example.tooltip": "Boolean option tooltip",
-  "option.framework.first.boolean_example.true": "Positive",
-  "option.framework.first.double_example": "Double option",
-  "option.framework.first.double_example.tooltip": "Double option tooltip",
-  "option.framework.first.enum_example": "Enum option",
-  "option.framework.first.enum_example.tooltip": "Enum option tooltip",
-  "option.framework.first.enum_example.value": "%s",
-  "option.framework.first.int_example": "Integer option",
-  "option.framework.first.int_example.tooltip": "Integer option tooltip",
-  "option.framework.first.int_example.value": "%d m",
-  "option.framework.first.item_example": "Item option",
-  "option.framework.first.item_example.tooltip": "Item option tooltip",
-  "option.framework.first.lenient_string_example": "Lenient string option",
-  "option.framework.first.lenient_string_example.tooltip": "Lenient string option tooltip",
-  "option.framework.first.strict_string_example": "Strict string option",
-  "option.framework.first.strict_string_example.error": "Not a valid string",
-  "option.framework.first.strict_string_example.tooltip": "Strict string option tooltip",
-  "option.framework.first.tooltip": "First category tooltip",
-  "option.framework.second": "Second category",
-  "option.framework.second.string_list_example": "String list option",
-  "option.framework.second.string_list_example.tooltip": "String list option tooltip",
-  "option.framework.second.tooltip": "Second category tooltip",
-  "option.framework.third": "Third category",
-  "option.framework.third.action": "Open Cloth Config screen",
-  "option.framework.third.action.text": "Execute",
-  "option.framework.third.action.tooltip": "Action option tooltip",
-  "option.framework.third.first": "First group",
-  "option.framework.third.first.argb_example": "ARGB option",
-  "option.framework.third.first.argb_example.tooltip": "ARGB option tooltip",
-  "option.framework.third.first.item_example": "Item option",
-  "option.framework.third.first.item_example.error": "Not a valid item",
-  "option.framework.third.first.item_example.tooltip": "Item option tooltip",
-  "option.framework.third.first.key_example": "Key option",
-  "option.framework.third.first.key_example.tooltip": "Key option tooltip",
-  "option.framework.third.first.rgb_example": "RGB option",
-  "option.framework.third.first.rgb_example.tooltip": "RGB option tooltip",
-  "option.framework.third.first.tooltip": "First group tooltip",
-  "option.framework.third.message": "Third category message",
-  "option.framework.third.tooltip": "Third category tooltip",
+  "screen.framework.options": "Framework Options",
+  
 
-  "screen.framework.options": "Framework Options"
+  "option.framework.cat1": "First category",
+  "option.framework.cat1.tooltip": "First category tooltip",
+
+  "option.framework.cat1.booleanOption": "Boolean option",
+  "option.framework.cat1.booleanOption.tooltip": "Boolean option tooltip",
+  "option.framework.cat1.booleanOption.true": "Positive",
+  "option.framework.cat1.booleanOption.false": "Negative",
+
+  "option.framework.cat1.intOption": "Integer option",
+  "option.framework.cat1.intOption.tooltip": "Integer option tooltip",
+  "option.framework.cat1.intOption.value": "%d m",
+
+  "option.framework.cat1.doubleOption": "Double option",
+  "option.framework.cat1.doubleOption.tooltip": "Double option tooltip",
+
+  "option.framework.cat1.lenientStringOption": "Lenient string option",
+  "option.framework.cat1.lenientStringOption.tooltip": "Lenient string option tooltip",
+
+  "option.framework.cat1.strictStringOption": "Strict string option",
+  "option.framework.cat1.strictStringOption.tooltip": "Strict string option tooltip",
+  "option.framework.cat1.strictStringOption.error": "Not a valid string",
+
+  "option.framework.cat1.enumOption": "Enum option",
+  "option.framework.cat1.enumOption.tooltip": "Enum option tooltip",
+  "option.framework.cat1.enumOption.value": "%s",
+
+  "option.framework.cat1.cyclingObjectOption": "Object option",
+  "option.framework.cat1.cyclingObjectOption.tooltip": "Object option tooltip",
+  
+  
+  "option.framework.cat2": "Second category",
+  "option.framework.cat2.tooltip": "Second category tooltip",
+
+  "option.framework.cat2.stringListOption": "String list option",
+  "option.framework.cat2.stringListOption.tooltip": "String list option tooltip",
+  
+  
+  "option.framework.cat3": "Third category",
+  "option.framework.cat3.tooltip": "Third category tooltip",
+  "option.framework.cat3.message": "Third category message",
+
+  "option.framework.cat3.action": "Open Cloth Config screen",
+  "option.framework.cat3.action.text": "Execute",
+  "option.framework.cat3.action.tooltip": "Action option tooltip",
+
+  "option.framework.cat3.group1": "First group",
+  "option.framework.cat3.group1.tooltip": "First group tooltip",
+  
+  "option.framework.cat3.group1.rgbOption": "RGB option",
+  "option.framework.cat3.group1.rgbOption.tooltip": "RGB option tooltip",
+
+  "option.framework.cat3.group1.argbOption": "ARGB option",
+  "option.framework.cat3.group1.argbOption.tooltip": "ARGB option tooltip",
+
+  "option.framework.cat3.group1.itemOption": "Item option",
+  "option.framework.cat3.group1.itemOption.error": "Not a valid item",
+  "option.framework.cat3.group1.itemOption.tooltip": "Item option tooltip",
+
+  "option.framework.cat3.group1.keyOption": "Key option",
+  "option.framework.cat3.group1.keyOption.tooltip": "Key option tooltip",
+
+  
+  "option.framework.cat4": "Fourth category",
+  "option.framework.cat4.tooltip": "Fourth category tooltip",
+  
+  "option.framework.cat4.add": "Add",
+  "option.framework.cat4.delete": "Delete",
+  
+  "option.framework.cat4.customObjectGroup": "Object %d",
+
+  "option.framework.cat4.name": "Name",
+  "option.framework.cat4.name.tooltip": "Name tooltip",
+  
+  "option.framework.cat4.size": "Size",
+  "option.framework.cat4.size.tooltip": "Size tooltip",
+  "option.framework.cat4.size.value": "%d m"
 }

@@ -61,11 +61,6 @@ guarantee of support or maintenance. If you choose to use it, you do so at your 
 7. Run the `updateLicenses` gradle task
 8. Update the license lines in `gradle.properties` and `README.md` accordingly
 
-#### Other Notes
-
-- The Fabric Client run configuration will crash, citing a missing library for YACL. Download and add YACL to the `mods`
-folder manually to fix. It may still crash after that, but usually only on the first run.
-
 #### Dependencies
 
 - Mod dependencies must be specified in the loader-specific `build.gradle` file. APIs may be specified in the common 

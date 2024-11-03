@@ -38,51 +38,80 @@ public class Config {
     public final Options options = new Options();
 
     public static class Options {
+        
         // First category
-        public static final boolean defaultBooleanExample = true;
-        public boolean booleanExample = defaultBooleanExample;
+        
+        public static final boolean defaultBooleanOption = true;
+        public boolean booleanOption = defaultBooleanOption;
 
-        public static final int defaultIntExample = 7;
-        public int intExample = defaultIntExample;
+        public static final int defaultIntOption = 7;
+        public int intOption = defaultIntOption;
 
-        public static final double defaultDoubleExample = 4.5;
-        public double doubleExample = defaultDoubleExample;
+        public static final double defaultDoubleOption = 4.5;
+        public double doubleOption = defaultDoubleOption;
 
-        public static final String defaultLenientStringExample = "example";
-        public String lenientStringExample = defaultLenientStringExample;
+        public static final String defaultLenientStringOption = "example";
+        public String lenientStringOption = defaultLenientStringOption;
 
-        public static final List<String> strictStringExampleValues = List.of("One", "Two", "Three");
-        public static final String defaultStrictStringExample = strictStringExampleValues.getFirst();
-        public String strictStringExample = defaultStrictStringExample;
+        public static final List<String> strictStringOptionValues = List.of("One", "Two", "Three");
+        public static final String defaultStrictStringOption = strictStringOptionValues.getFirst();
+        public String strictStringOption = defaultStrictStringOption;
 
-        public static final TriState defaultEnumExample = TriState.Value1;
-        public TriState enumExample = defaultEnumExample;
+        public static final TriState defaultEnumOption = TriState.Value1;
+        public TriState enumOption = defaultEnumOption;
 
         // Second category
-        public static final List<String> defaultStringListExample = List.of("One");
-        public static final String defaultStringListExampleValue = "One";
-        public List<String> stringListExample = defaultStringListExample;
+        
+        public static final List<String> defaultStringListOption = List.of("One");
+        public static final String defaultStringListOptionValue = "One";
+        public List<String> stringListOption = defaultStringListOption;
 
         // Third Category
-        public static final int defaultRgbExample = 16777215;
-        public int rgbExample = defaultRgbExample;
+        
+        public static final int defaultRgbOption = 16777215;
+        public int rgbOption = defaultRgbOption;
 
-        public static final int defaultArgbExample = -1;
-        public int argbExample = defaultArgbExample;
+        public static final int defaultArgbOption = -1;
+        public int argbOption = defaultArgbOption;
 
         // Cloth Config only
+        
         public static final int defaultKeyExample = InputConstants.KEY_J;
-        public int keyExample = defaultKeyExample;
+        public int keyOption = defaultKeyExample;
 
         // YACL only
-        public static final String defaultItemExample = BuiltInRegistries.ITEM.getKey(Items.STONE).toString();
-        public String itemExample = defaultItemExample;
+        // Fourth category
+        
+        public static final String defaultItemOption = BuiltInRegistries.ITEM.getKey(Items.STONE).toString();
+        public String itemOption = defaultItemOption;
+        
+        public static final List<CustomObject> defaultCustomObjectListExample = List.of(
+                new CustomObject("one", 1),
+                new CustomObject("two", 2)
+        );
+        public List<CustomObject> customObjectListExample = defaultCustomObjectListExample;
     }
 
     public enum TriState {
         Value1,
         Value2,
         Value3
+    }
+    
+    public static class CustomObject {
+        public static final String defaultName = "";
+        public String name = defaultName;
+        
+        public static final int defaultSize = 0;
+        public int size = defaultSize;
+
+        public CustomObject() {
+        }
+
+        public CustomObject(String name, int size) {
+            this.name = name;
+            this.size = size;
+        }
     }
 
     // Instance management

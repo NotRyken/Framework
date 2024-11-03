@@ -64,158 +64,158 @@ public class ClothScreenProvider {
 
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(parent)
-                .setTitle(localized("screen", "options"))
+                .setTitle(localized("name"))
                 .setSavingRunnable(Config::save);
         ConfigEntryBuilder eb = builder.entryBuilder();
 
         // First category
-        ConfigCategory firstCat = builder.getOrCreateCategory(localized("option", "first"));
+        ConfigCategory firstCat = builder.getOrCreateCategory(localized("option", "cat1"));
 
         // Yes/No button
         firstCat.addEntry(eb.startBooleanToggle(
-                localized("option", "first.boolean_example"), options.booleanExample)
-                .setTooltip(localized("option", "first.boolean_example.tooltip"))
-                .setDefaultValue(Config.Options.defaultBooleanExample)
-                .setSaveConsumer(val -> options.booleanExample = val)
+                localized("option", "cat1.booleanOption"), options.booleanOption)
+                .setTooltip(localized("option", "cat1.booleanOption.tooltip"))
+                .setDefaultValue(Config.Options.defaultBooleanOption)
+                .setSaveConsumer(val -> options.booleanOption = val)
                 .build());
 
         // Colored Custom/Custom button
         firstCat.addEntry(eb.startBooleanToggle(
-                localized("option", "first.boolean_example"), options.booleanExample)
-                .setTooltip(localized("option", "first.boolean_example.tooltip"))
-                .setDefaultValue(Config.Options.defaultBooleanExample)
-                .setSaveConsumer(val -> options.booleanExample = val)
+                localized("option", "cat1.booleanOption"), options.booleanOption)
+                .setTooltip(localized("option", "cat1.booleanOption.tooltip"))
+                .setDefaultValue(Config.Options.defaultBooleanOption)
+                .setSaveConsumer(val -> options.booleanOption = val)
                 .setYesNoTextSupplier(val -> val // op
-                        ? localized("option", "first.boolean_example.true")
+                        ? localized("option", "cat1.booleanOption.true")
                         .withStyle(ChatFormatting.GREEN)
-                        : localized("option", "first.boolean_example.false")
+                        : localized("option", "cat1.booleanOption.false")
                         .withStyle(ChatFormatting.RED))
                 .build());
 
         // Integer slider with value text formatting (also available for Long)
         firstCat.addEntry(eb.startIntSlider(
-                localized("option", "first.int_example"), options.intExample, 0, 10)
-                .setTooltip(localized("option", "first.int_example.tooltip"))
-                .setDefaultValue(Config.Options.defaultIntExample)
-                .setSaveConsumer(val -> options.intExample = val)
-                .setTextGetter(val -> localized("option", "first.int_example.value", val)) // op
+                localized("option", "cat1.intOption"), options.intOption, 0, 10)
+                .setTooltip(localized("option", "cat1.intOption.tooltip"))
+                .setDefaultValue(Config.Options.defaultIntOption)
+                .setSaveConsumer(val -> options.intOption = val)
+                .setTextGetter(val -> localized("option", "cat1.intOption.value", val)) // op
                 .build());
 
         // Double field with range (also available for Integer, Float, Long)
         firstCat.addEntry(eb.startDoubleField(
-                localized("option", "first.double_example"), options.doubleExample)
-                .setTooltip(localized("option", "first.double_example.tooltip"))
-                .setDefaultValue(Config.Options.defaultDoubleExample)
-                .setSaveConsumer(val -> options.doubleExample = val)
+                localized("option", "cat1.doubleOption"), options.doubleOption)
+                .setTooltip(localized("option", "cat1.doubleOption.tooltip"))
+                .setDefaultValue(Config.Options.defaultDoubleOption)
+                .setSaveConsumer(val -> options.doubleOption = val)
                 .setMin(0d) // op
                 .setMax(10d) // op
                 .build());
 
         // String field (lenient)
         firstCat.addEntry(eb.startStrField(
-                localized("option", "first.lenient_string_example"), options.lenientStringExample)
-                .setTooltip(localized("option", "first.lenient_string_example.tooltip"))
-                .setDefaultValue(Config.Options.defaultLenientStringExample)
-                .setSaveConsumer(val -> options.lenientStringExample = val)
+                localized("option", "cat1.lenientStringOption"), options.lenientStringOption)
+                .setTooltip(localized("option", "cat1.lenientStringOption.tooltip"))
+                .setDefaultValue(Config.Options.defaultLenientStringOption)
+                .setSaveConsumer(val -> options.lenientStringOption = val)
                 .build());
 
         // String field (strict) with dropdown suggestion provider
         firstCat.addEntry(eb.startStringDropdownMenu(
-                localized("option", "first.strict_string_example"), options.strictStringExample)
-                .setTooltip(localized("option", "first.strict_string_example.tooltip"))
-                .setDefaultValue(Config.Options.defaultStrictStringExample)
-                .setSaveConsumer(val -> options.strictStringExample = val)
-                .setSelections(Config.Options.strictStringExampleValues)
+                localized("option", "cat1.strictStringOption"), options.strictStringOption)
+                .setTooltip(localized("option", "cat1.strictStringOption.tooltip"))
+                .setDefaultValue(Config.Options.defaultStrictStringOption)
+                .setSaveConsumer(val -> options.strictStringOption = val)
+                .setSelections(Config.Options.strictStringOptionValues)
                 .setErrorSupplier(val -> {
-                    if (Config.Options.strictStringExampleValues.contains(val)) return Optional.empty();
-                    else return Optional.of(localized("option", "first.strict_string_example.error"));
+                    if (Config.Options.strictStringOptionValues.contains(val)) return Optional.empty();
+                    else return Optional.of(localized("option", "cat1.strictStringOption.error"));
                 })
                 .build());
 
         // Enum dropdown
         firstCat.addEntry(eb.startDropdownMenu(
-                localized("option", "first.enum_example"), options.enumExample,
+                localized("option", "cat1.enumOption"), options.enumOption,
                         Config.TriState::valueOf)
-                .setTooltip(localized("option", "first.enum_example.tooltip"))
-                .setDefaultValue(Config.Options.defaultEnumExample)
-                .setSaveConsumer(val -> options.enumExample = val)
+                .setTooltip(localized("option", "cat1.enumOption.tooltip"))
+                .setDefaultValue(Config.Options.defaultEnumOption)
+                .setSaveConsumer(val -> options.enumOption = val)
                 .setSelections(List.of(Config.TriState.values()))
                 .setSuggestionMode(false) // Disable typing
                 .build());
 
         // Enum cycling button
         firstCat.addEntry(eb.startEnumSelector(
-                localized("option", "first.enum_example"),
-                        Config.TriState.class, options.enumExample)
-                .setTooltip(localized("option", "first.enum_example.tooltip"))
-                .setDefaultValue(Config.Options.defaultEnumExample)
-                .setSaveConsumer(val -> options.enumExample = val)
+                localized("option", "cat1.enumOption"),
+                        Config.TriState.class, options.enumOption)
+                .setTooltip(localized("option", "cat1.enumOption.tooltip"))
+                .setDefaultValue(Config.Options.defaultEnumOption)
+                .setSaveConsumer(val -> options.enumOption = val)
                 .setEnumNameProvider(val ->
-                        localized("option", "first.enum_example.value", val.name())) // op
+                        localized("option", "cat1.enumOption.value", val.name())) // op
                 .build());
 
         // Object (in this case, string) list cycling button
         firstCat.addEntry(eb.startSelector(
-                localized("option", "first.item_example"),
-                        Config.Options.strictStringExampleValues.toArray(), options.strictStringExample)
-                .setTooltip(localized("option", "first.item_example.tooltip"))
-                .setDefaultValue(Config.Options.defaultStrictStringExample)
-                .setSaveConsumer(val -> options.strictStringExample = (String)val)
+                localized("option", "cat1.cyclingObjectOption"),
+                        Config.Options.strictStringOptionValues.toArray(), options.strictStringOption)
+                .setTooltip(localized("option", "cat1.cyclingObjectOption.tooltip"))
+                .setDefaultValue(Config.Options.defaultStrictStringOption)
+                .setSaveConsumer(val -> options.strictStringOption = (String)val)
                 .setNameProvider(val -> Component.literal((String)val)) // op
                 .build());
 
         // Second category
-        ConfigCategory secondCat = builder.getOrCreateCategory(localized("option", "second"));
+        ConfigCategory secondCat = builder.getOrCreateCategory(localized("option", "cat2"));
 
         // Collapsible list of strings (also available for Integer, Float, Double, Long)
         secondCat.addEntry(eb.startStrList(
-                localized("option", "second.string_list_example"), options.stringListExample)
-                .setTooltip(localized("option", "second.string_list_example.tooltip"))
-                .setDefaultValue(Config.Options.defaultStringListExample)
-                .setSaveConsumer(val -> options.stringListExample = val)
+                localized("option", "cat2.stringListOption"), options.stringListOption)
+                .setTooltip(localized("option", "cat2.stringListOption.tooltip"))
+                .setDefaultValue(Config.Options.defaultStringListOption)
+                .setSaveConsumer(val -> options.stringListOption = val)
                 .setCreateNewInstance((entry) -> new StringListListEntry.StringListCell(
-                        Config.Options.defaultStringListExampleValue, entry)) // op
+                        Config.Options.defaultStringListOptionValue, entry)) // op
                 .setInsertInFront(false) // op, default false
                 .setExpanded(true) // op, default false
                 .build());
 
         // Third category
-        ConfigCategory thirdCat = builder.getOrCreateCategory(localized("option", "third"));
+        ConfigCategory thirdCat = builder.getOrCreateCategory(localized("option", "cat3"));
 
         // Multiline text
         thirdCat.addEntry(eb.startTextDescription(
-                localized("option", "third.message"))
+                localized("option", "cat3.message"))
                 .build());
 
         // Collapsible group of options
         SubCategoryBuilder thirdCatFirstGroup = eb.startSubCategory(
-                localized("option", "third.first"))
-                .setTooltip(localized("option", "third.first.tooltip"))
+                localized("option", "cat3.group1"))
+                .setTooltip(localized("option", "cat3.group1.tooltip"))
                 .setExpanded(true); // op, default false
 
         thirdCatFirstGroup.add(eb.startColorField(
-                localized("option", "third.first.rgb_example"), options.rgbExample)
-                .setTooltip(localized("option", "third.first.rgb_example.tooltip"))
-                .setDefaultValue(Config.Options.defaultRgbExample)
-                .setSaveConsumer(val -> options.rgbExample = val)
+                localized("option", "cat3.group1.rgbOption"), options.rgbOption)
+                .setTooltip(localized("option", "cat3.group1.rgbOption.tooltip"))
+                .setDefaultValue(Config.Options.defaultRgbOption)
+                .setSaveConsumer(val -> options.rgbOption = val)
                 .setAlphaMode(false) // op, default false
                 .build());
 
         thirdCatFirstGroup.add(eb.startColorField(
-                        localized("option", "third.first.argb_example"), options.argbExample)
-                .setTooltip(localized("option", "third.first.argb_example.tooltip"))
-                .setDefaultValue(Config.Options.defaultArgbExample)
-                .setSaveConsumer(val -> options.argbExample = val)
+                        localized("option", "cat3.group1.argbOption"), options.argbOption)
+                .setTooltip(localized("option", "cat3.group1.argbOption.tooltip"))
+                .setDefaultValue(Config.Options.defaultArgbOption)
+                .setSaveConsumer(val -> options.argbOption = val)
                 .setAlphaMode(true) // op, default false
                 .build());
 
         thirdCatFirstGroup.add(eb.startKeyCodeField(
-                localized("option", "third.first.key_example"),
-                        InputConstants.getKey(options.keyExample, options.keyExample))
-                .setTooltip(localized("option", "third.first.key_example.tooltip"))
+                localized("option", "cat3.group1.keyOption"),
+                        InputConstants.getKey(options.keyOption, options.keyOption))
+                .setTooltip(localized("option", "cat3.group1.keyOption.tooltip"))
                 .setDefaultValue(InputConstants.getKey(Config.Options.defaultKeyExample,
                         Config.Options.defaultKeyExample))
-                .setKeySaveConsumer(val -> options.keyExample = val.getValue())
+                .setKeySaveConsumer(val -> options.keyOption = val.getValue())
                 .setAllowKey(true) // op, default true
                 .setAllowMouse(true) // op, default true
                 .build());
@@ -225,14 +225,14 @@ public class ClothScreenProvider {
         Set<String> items = new HashSet<>(BuiltInRegistries.ITEM.keySet()
                 .stream().map(ResourceLocation::toString).toList());
         thirdCatFirstGroup.add(eb.startStringDropdownMenu(
-                        localized("option", "third.first.item_example"), options.itemExample)
-                .setTooltip(localized("option", "third.first.item_example.tooltip"))
-                .setDefaultValue(Config.Options.defaultItemExample)
-                .setSaveConsumer(val -> options.itemExample = val)
+                        localized("option", "cat3.group1.itemOption"), options.itemOption)
+                .setTooltip(localized("option", "cat3.group1.itemOption.tooltip"))
+                .setDefaultValue(Config.Options.defaultItemOption)
+                .setSaveConsumer(val -> options.itemOption = val)
                 .setSelections(items)
                 .setErrorSupplier(val -> {
                     if (items.contains(val)) return Optional.empty();
-                    else return Optional.of(localized("option", "third.first.item_example.error"));
+                    else return Optional.of(localized("option", "cat3.group1.itemOption.error"));
                 })
                 .build());
 
