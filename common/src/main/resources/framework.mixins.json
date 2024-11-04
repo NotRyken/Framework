@@ -7,8 +7,7 @@
   "mixins": [
   ],
   "client": [
-    "MixinMinecraft",
-    "accessor.YACLScreenAccessor"
+    "MixinMinecraft"
   ],
   "server": [
   ],

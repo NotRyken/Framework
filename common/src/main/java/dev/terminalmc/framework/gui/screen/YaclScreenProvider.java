@@ -16,7 +16,6 @@ import dev.isxander.yacl3.api.controller.*;
 import dev.isxander.yacl3.gui.YACLScreen;
 import dev.terminalmc.framework.Framework;
 import dev.terminalmc.framework.config.Config;
-import dev.terminalmc.framework.mixin.accessor.YACLScreenAccessor;
 import net.minecraft.ChatFormatting;
 import net.minecraft.ResourceLocationException;
 import net.minecraft.client.Minecraft;
@@ -362,7 +361,7 @@ public class YaclScreenProvider {
                             .withStyle(ChatFormatting.RED))
                     .action((screen, buttonOption) -> {
                         options.customObjectListExample.remove(co);
-                        reload(screen, ((YACLScreenAccessor)screen).getParent());
+                        reload(screen, parent);
                     })
                     .build());
 
@@ -374,7 +373,7 @@ public class YaclScreenProvider {
                 .withStyle(ChatFormatting.GREEN));
         addButton.action((screen, buttonOption) -> {
             options.customObjectListExample.add(new Config.CustomObject());
-            reload(screen, ((YACLScreenAccessor)screen).getParent());
+            reload(screen, parent);
         });
         fourthCat.option(addButton.build());
 
