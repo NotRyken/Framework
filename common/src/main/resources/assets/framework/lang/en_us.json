@@ -1,8 +1,8 @@
 {
   "framework.name": "Framework",
 
-  "modmenu.descriptionTranslation.framework": "A custom template mod.\nBased on Jaredlll08's MultiLoader Template.",
-  "fml.menu.mods.info.description.framework": "A custom template mod.\nBased on Jaredlll08's MultiLoader Template.",
+  "modmenu.descriptionTranslation.framework": "${mod_description}",
+  "fml.menu.mods.info.description.framework": "${mod_description}",
 
   "key.framework.group": "Framework",
   "key.framework.group.example": "Example Key",
@@ -10,10 +10,8 @@
   "message.framework.viewModrinth": "View on Modrinth",
   "message.framework.installCloth": "Install Cloth Config API to access mod options",
   "message.framework.installYacl": "Install Yet Another Config Lib to access mod options",
-
-  "screen.framework.options": "Framework Options",
   
-
+  
   "option.framework.cat1": "First category",
   "option.framework.cat1.tooltip": "First category tooltip",
 

@@ -75,7 +75,7 @@ public class ClothScreenProvider {
         firstCat.addEntry(eb.startBooleanToggle(
                 localized("option", "cat1.booleanOption"), options.booleanOption)
                 .setTooltip(localized("option", "cat1.booleanOption.tooltip"))
-                .setDefaultValue(Config.Options.defaultBooleanOption)
+                .setDefaultValue(Config.Options.booleanOptionDefault)
                 .setSaveConsumer(val -> options.booleanOption = val)
                 .build());
 
@@ -83,7 +83,7 @@ public class ClothScreenProvider {
         firstCat.addEntry(eb.startBooleanToggle(
                 localized("option", "cat1.booleanOption"), options.booleanOption)
                 .setTooltip(localized("option", "cat1.booleanOption.tooltip"))
-                .setDefaultValue(Config.Options.defaultBooleanOption)
+                .setDefaultValue(Config.Options.booleanOptionDefault)
                 .setSaveConsumer(val -> options.booleanOption = val)
                 .setYesNoTextSupplier(val -> val // op
                         ? localized("option", "cat1.booleanOption.true")
@@ -96,7 +96,7 @@ public class ClothScreenProvider {
         firstCat.addEntry(eb.startIntSlider(
                 localized("option", "cat1.intOption"), options.intOption, 0, 10)
                 .setTooltip(localized("option", "cat1.intOption.tooltip"))
-                .setDefaultValue(Config.Options.defaultIntOption)
+                .setDefaultValue(Config.Options.intOptionDefault)
                 .setSaveConsumer(val -> options.intOption = val)
                 .setTextGetter(val -> localized("option", "cat1.intOption.value", val)) // op
                 .build());
@@ -105,7 +105,7 @@ public class ClothScreenProvider {
         firstCat.addEntry(eb.startDoubleField(
                 localized("option", "cat1.doubleOption"), options.doubleOption)
                 .setTooltip(localized("option", "cat1.doubleOption.tooltip"))
-                .setDefaultValue(Config.Options.defaultDoubleOption)
+                .setDefaultValue(Config.Options.doubleOptionDefault)
                 .setSaveConsumer(val -> options.doubleOption = val)
                 .setMin(0d) // op
                 .setMax(10d) // op
@@ -115,7 +115,7 @@ public class ClothScreenProvider {
         firstCat.addEntry(eb.startStrField(
                 localized("option", "cat1.lenientStringOption"), options.lenientStringOption)
                 .setTooltip(localized("option", "cat1.lenientStringOption.tooltip"))
-                .setDefaultValue(Config.Options.defaultLenientStringOption)
+                .setDefaultValue(Config.Options.lenientStringOptionDefault)
                 .setSaveConsumer(val -> options.lenientStringOption = val)
                 .build());
 
@@ -123,7 +123,7 @@ public class ClothScreenProvider {
         firstCat.addEntry(eb.startStringDropdownMenu(
                 localized("option", "cat1.strictStringOption"), options.strictStringOption)
                 .setTooltip(localized("option", "cat1.strictStringOption.tooltip"))
-                .setDefaultValue(Config.Options.defaultStrictStringOption)
+                .setDefaultValue(Config.Options.strictStringOptionDefault)
                 .setSaveConsumer(val -> options.strictStringOption = val)
                 .setSelections(Config.Options.strictStringOptionValues)
                 .setErrorSupplier(val -> {
@@ -137,7 +137,7 @@ public class ClothScreenProvider {
                 localized("option", "cat1.enumOption"), options.enumOption,
                         Config.TriState::valueOf)
                 .setTooltip(localized("option", "cat1.enumOption.tooltip"))
-                .setDefaultValue(Config.Options.defaultEnumOption)
+                .setDefaultValue(Config.Options.enumOptionDefault)
                 .setSaveConsumer(val -> options.enumOption = val)
                 .setSelections(List.of(Config.TriState.values()))
                 .setSuggestionMode(false) // Disable typing
@@ -148,7 +148,7 @@ public class ClothScreenProvider {
                 localized("option", "cat1.enumOption"),
                         Config.TriState.class, options.enumOption)
                 .setTooltip(localized("option", "cat1.enumOption.tooltip"))
-                .setDefaultValue(Config.Options.defaultEnumOption)
+                .setDefaultValue(Config.Options.enumOptionDefault)
                 .setSaveConsumer(val -> options.enumOption = val)
                 .setEnumNameProvider(val ->
                         localized("option", "cat1.enumOption.value", val.name())) // op
@@ -159,7 +159,7 @@ public class ClothScreenProvider {
                 localized("option", "cat1.cyclingObjectOption"),
                         Config.Options.strictStringOptionValues.toArray(), options.strictStringOption)
                 .setTooltip(localized("option", "cat1.cyclingObjectOption.tooltip"))
-                .setDefaultValue(Config.Options.defaultStrictStringOption)
+                .setDefaultValue(Config.Options.strictStringOptionDefault)
                 .setSaveConsumer(val -> options.strictStringOption = (String)val)
                 .setNameProvider(val -> Component.literal((String)val)) // op
                 .build());
@@ -171,10 +171,10 @@ public class ClothScreenProvider {
         secondCat.addEntry(eb.startStrList(
                 localized("option", "cat2.stringListOption"), options.stringListOption)
                 .setTooltip(localized("option", "cat2.stringListOption.tooltip"))
-                .setDefaultValue(Config.Options.defaultStringListOption)
+                .setDefaultValue(Config.Options.stringListOptionDefault)
                 .setSaveConsumer(val -> options.stringListOption = val)
                 .setCreateNewInstance((entry) -> new StringListListEntry.StringListCell(
-                        Config.Options.defaultStringListOptionValue, entry)) // op
+                        Config.Options.stringListOptionValueDefault, entry)) // op
                 .setInsertInFront(false) // op, default false
                 .setExpanded(true) // op, default false
                 .build());
@@ -196,7 +196,7 @@ public class ClothScreenProvider {
         thirdCatFirstGroup.add(eb.startColorField(
                 localized("option", "cat3.group1.rgbOption"), options.rgbOption)
                 .setTooltip(localized("option", "cat3.group1.rgbOption.tooltip"))
-                .setDefaultValue(Config.Options.defaultRgbOption)
+                .setDefaultValue(Config.Options.rgbOptionDefault)
                 .setSaveConsumer(val -> options.rgbOption = val)
                 .setAlphaMode(false) // op, default false
                 .build());
@@ -204,7 +204,7 @@ public class ClothScreenProvider {
         thirdCatFirstGroup.add(eb.startColorField(
                         localized("option", "cat3.group1.argbOption"), options.argbOption)
                 .setTooltip(localized("option", "cat3.group1.argbOption.tooltip"))
-                .setDefaultValue(Config.Options.defaultArgbOption)
+                .setDefaultValue(Config.Options.argbOptionDefault)
                 .setSaveConsumer(val -> options.argbOption = val)
                 .setAlphaMode(true) // op, default false
                 .build());
@@ -213,8 +213,8 @@ public class ClothScreenProvider {
                 localized("option", "cat3.group1.keyOption"),
                         InputConstants.getKey(options.keyOption, options.keyOption))
                 .setTooltip(localized("option", "cat3.group1.keyOption.tooltip"))
-                .setDefaultValue(InputConstants.getKey(Config.Options.defaultKeyExample,
-                        Config.Options.defaultKeyExample))
+                .setDefaultValue(InputConstants.getKey(Config.Options.keyExampleDefault,
+                        Config.Options.keyExampleDefault))
                 .setKeySaveConsumer(val -> options.keyOption = val.getValue())
                 .setAllowKey(true) // op, default true
                 .setAllowMouse(true) // op, default true
@@ -227,7 +227,7 @@ public class ClothScreenProvider {
         thirdCatFirstGroup.add(eb.startStringDropdownMenu(
                         localized("option", "cat3.group1.itemOption"), options.itemOption)
                 .setTooltip(localized("option", "cat3.group1.itemOption.tooltip"))
-                .setDefaultValue(Config.Options.defaultItemOption)
+                .setDefaultValue(Config.Options.itemOptionDefault)
                 .setSaveConsumer(val -> options.itemOption = val)
                 .setSelections(items)
                 .setErrorSupplier(val -> {

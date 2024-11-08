@@ -42,55 +42,55 @@ public class Config {
         
         // First category
         
-        public static final boolean defaultBooleanOption = true;
-        public boolean booleanOption = defaultBooleanOption;
+        public static final boolean booleanOptionDefault = true;
+        public boolean booleanOption = booleanOptionDefault;
 
-        public static final int defaultIntOption = 7;
-        public int intOption = defaultIntOption;
+        public static final int intOptionDefault = 7;
+        public int intOption = intOptionDefault;
 
-        public static final double defaultDoubleOption = 4.5;
-        public double doubleOption = defaultDoubleOption;
+        public static final double doubleOptionDefault = 4.5;
+        public double doubleOption = doubleOptionDefault;
 
-        public static final String defaultLenientStringOption = "example";
-        public String lenientStringOption = defaultLenientStringOption;
+        public static final String lenientStringOptionDefault = "example";
+        public String lenientStringOption = lenientStringOptionDefault;
 
         public static final List<String> strictStringOptionValues = List.of("One", "Two", "Three");
-        public static final String defaultStrictStringOption = strictStringOptionValues.getFirst();
-        public String strictStringOption = defaultStrictStringOption;
+        public static final String strictStringOptionDefault = strictStringOptionValues.getFirst();
+        public String strictStringOption = strictStringOptionDefault;
 
-        public static final TriState defaultEnumOption = TriState.Value1;
-        public TriState enumOption = defaultEnumOption;
+        public static final TriState enumOptionDefault = TriState.Value1;
+        public TriState enumOption = enumOptionDefault;
 
         // Second category
         
-        public static final List<String> defaultStringListOption = List.of("One");
-        public static final String defaultStringListOptionValue = "One";
-        public List<String> stringListOption = defaultStringListOption;
+        public static final List<String> stringListOptionDefault = List.of("One");
+        public static final String stringListOptionValueDefault = "One";
+        public List<String> stringListOption = stringListOptionDefault;
 
         // Third Category
         
-        public static final int defaultRgbOption = 16777215;
-        public int rgbOption = defaultRgbOption;
+        public static final int rgbOptionDefault = 16777215;
+        public int rgbOption = rgbOptionDefault;
 
-        public static final int defaultArgbOption = -1;
-        public int argbOption = defaultArgbOption;
+        public static final int argbOptionDefault = -1;
+        public int argbOption = argbOptionDefault;
 
         // Cloth Config only
         
-        public static final int defaultKeyExample = InputConstants.KEY_J;
-        public int keyOption = defaultKeyExample;
+        public static final int keyExampleDefault = InputConstants.KEY_J;
+        public int keyOption = keyExampleDefault;
 
         // YACL only
         // Fourth category
         
-        public static final String defaultItemOption = BuiltInRegistries.ITEM.getKey(Items.STONE).toString();
-        public String itemOption = defaultItemOption;
+        public static final String itemOptionDefault = BuiltInRegistries.ITEM.getKey(Items.STONE).toString();
+        public String itemOption = itemOptionDefault;
         
-        public static final List<CustomObject> defaultCustomObjectListExample = new ArrayList<>(List.of(
+        public static final List<CustomObject> customObjectListDefault = new ArrayList<>(List.of(
                 new CustomObject("one", 1),
                 new CustomObject("two", 2)
         ));
-        public List<CustomObject> customObjectListExample = defaultCustomObjectListExample;
+        public List<CustomObject> customObjectList = customObjectListDefault;
     }
 
     public enum TriState {
@@ -100,11 +100,11 @@ public class Config {
     }
     
     public static class CustomObject {
-        public static final String defaultName = "";
-        public String name = defaultName;
+        public static final String nameDefault = "";
+        public String name = nameDefault;
         
-        public static final int defaultSize = 0;
-        public int size = defaultSize;
+        public static final int sizeDefault = 0;
+        public int size = sizeDefault;
 
         public CustomObject() {
         }
