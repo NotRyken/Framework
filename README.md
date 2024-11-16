@@ -61,7 +61,7 @@ guarantee of support or maintenance. If you choose to use it, you do so at your 
 7. Run the `updateLicenses` gradle task
 8. Update the license lines in `gradle.properties` and `README.md` accordingly
 
-#### Dependencies
+### Dependencies
 
 - Mod dependencies must be specified in the loader-specific `build.gradle` file. APIs may be specified in the common 
 `build.gradle` for usage by the common subproject. If for any reason a mod dependency does not provide a `common` 
