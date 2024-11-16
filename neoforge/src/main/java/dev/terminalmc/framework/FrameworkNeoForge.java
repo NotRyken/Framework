@@ -48,7 +48,8 @@ public class FrameworkNeoForge {
         // Commands
         @SubscribeEvent
         static void registerClientCommands(RegisterClientCommandsEvent event) {
-            new Commands<CommandSourceStack>().register(event.getDispatcher(), event.getBuildContext());
+            new Commands<CommandSourceStack>().register(
+                    event.getDispatcher(), event.getBuildContext());
         }
 
         // Tick events
