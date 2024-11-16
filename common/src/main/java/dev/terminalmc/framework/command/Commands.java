@@ -33,7 +33,8 @@ import static net.minecraft.commands.Commands.literal;
 
 @SuppressWarnings("unchecked")
 public class Commands<S> extends CommandDispatcher<S> {
-    public void register(Minecraft mc, CommandDispatcher<S> dispatcher, CommandBuildContext buildContext) {
+    public void register(CommandDispatcher<S> dispatcher, CommandBuildContext buildContext) {
+        Minecraft mc = Minecraft.getInstance();
         dispatcher.register((LiteralArgumentBuilder<S>)literal(Framework.MOD_ID)
                 .then(literal("quote")
                         .then(argument("word", StringArgumentType.word())
