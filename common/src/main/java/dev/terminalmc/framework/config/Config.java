@@ -38,6 +38,10 @@ public class Config {
 
     public final Options options = new Options();
 
+    public static Options options() {
+        return Config.get().options;
+    }
+
     public static class Options {
         
         // First category

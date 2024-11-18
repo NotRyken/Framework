@@ -77,7 +77,7 @@ public class YaclScreenProvider {
      * </ul>
      */
     static Screen getConfigScreen(Screen parent) {
-        Config.Options options = Config.get().options;
+        Config.Options options = Config.options();
 
         YetAnotherConfigLib.Builder builder = YetAnotherConfigLib.createBuilder()
                 .title(localized("name"))

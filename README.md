@@ -74,7 +74,12 @@ version, it is usually possible to depend on the project's NeoForge version in t
 
 ### Licenses
 
-The license summaries listed below are not legal advice.
+This project is licensed [CC0-1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode), with the
+mixin classes carrying the [MPL-2.0](https://mozilla.org/MPL/2.0) header as an example of attributing a modified work
+from another mod licensed MPL-2.0.
+
+<details>
+<summary><b>License summaries (not legal advice)</b></summary>
 
 [CC0-1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 - No restrictions.
@@ -100,6 +105,8 @@ The license summaries listed below are not legal advice.
 - Distributions of source code (complete or partial, original or modified) must remain under the same license.
 - Source code must be provided when distributing copies or combined works in executable form.
 - Subject to previous points, a combined work may be distributed under a different license.
+
+</details>
 
 ### Contact
 
