@@ -108,8 +108,9 @@ from another mod licensed MPL-2.0.
 
 </details>
 
-### Contact
+[![Discord](https://img.shields.io/discord/1103153365216669797?logo=discord&label=Discord%20Server&color=%235865F2)](https://discord.terminalmc.dev)
 
-[![Discord Server](https://img.shields.io/discord/1103153365216669797?logo=discord&label=Discord%20Server&color=%235865F2)](https://discord.terminalmc.dev)
+[![Issues](https://img.shields.io/github/issues/TerminalMC/Framework?logo=github&label=GitHub%20Issues)](https://github.com/TerminalMC/Framework/issues)
 
-[![GitHub Issues](https://img.shields.io/github/issues/TerminalMC/Framework?logo=github&label=GitHub%20Issues)](https://github.com/TerminalMC/Framework/issues)
+[![License](https://img.shields.io/github/license/TerminalMC/Framework?label=License&logo=github&logoColor=white)](https://github.com/TerminalMC/Framework/blob/HEAD/LICENSE.txt)
+
