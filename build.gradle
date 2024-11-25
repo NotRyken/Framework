@@ -28,7 +28,10 @@ subprojects {
                 year = java.time.LocalDate.now().getYear().toString()
             }
             // Alternate license
-            matching(includes: ["**/MixinMinecraft.java", "**/MixinTitleScreen.java"]) {
+            matching(includes: [
+                    "**/MixinMinecraft.java", 
+                    "**/MixinTitleScreen.java",
+            ]) {
                 header = project.file(licenseDir + "other-mod/HEADER.txt")
             }
         }
