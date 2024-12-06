@@ -49,17 +49,21 @@ guarantee of support or maintenance. If you choose to use it, you do so at your 
 #### Changing Project Details (IntelliJ IDEA)
 
 1. Change the root directory name
+
 2. `SHIFT`+`F6` to rename the source package(s)
+
 3. `SHIFT`+`F6` to rename the assets directory (`common/src/main/resources/assets/framework`)
 
-
 4. Edit `rebrand.properties` with the new details
+
 5. Run the `rebrandProject` gradle task
 
+6. Replace the root `LICENSE.txt` and `common/src/main/resources/assets/{mod_id}/license/HEADER.txt` files with your 
+choice of license and header (optionally from `licenses`)
 
-6. Replace the LICENSE and NOTICE files with your choice of license (optionally from `licenses`)
 7. Run the `updateLicenses` gradle task
-8. Update the license lines in `gradle.properties` and `README.md` accordingly
+
+8. Update the license line in `gradle.properties` accordingly
 
 ### Dependencies
 
