@@ -46,5 +46,11 @@ issueTrackerURL="${issues_url}" #optional:none
   versionRange="${clothconfig_versions_neoforge}"
   side="CLIENT"
 
+[[dependencies."${mod_id}"]]
+  modId="yet_another_config_lib_v3"
+  type="optional"
+  versionRange="${yacl_versions_neoforge}"
+  side="CLIENT"
+
 # https://docs.neoforged.net/docs/gettingstarted/modfiles/#modstoml
 # https://docs.neoforged.net/docs/misc/updatechecker
