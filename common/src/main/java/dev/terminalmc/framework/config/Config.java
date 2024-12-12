@@ -59,7 +59,7 @@ public class Config {
         public String lenientStringOption = lenientStringOptionDefault;
 
         public static final List<String> strictStringOptionValues = List.of("One", "Two", "Three");
-        public static final String strictStringOptionDefault = strictStringOptionValues.getFirst();
+        public static final String strictStringOptionDefault = strictStringOptionValues.get(0);
         public String strictStringOption = strictStringOptionDefault;
 
         public static final TriState enumOptionDefault = TriState.Value1;

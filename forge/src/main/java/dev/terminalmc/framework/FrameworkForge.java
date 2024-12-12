@@ -15,23 +15,24 @@ import dev.terminalmc.framework.command.Commands;
 import dev.terminalmc.framework.gui.screen.ConfigScreenProvider;
 import net.minecraft.client.Minecraft;
 import net.minecraft.commands.CommandSourceStack;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.ModLoadingContext;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.client.event.ClientTickEvent;
-import net.neoforged.neoforge.client.event.RegisterClientCommandsEvent;
-import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
-import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.ConfigScreenHandler;
+import net.minecraftforge.client.event.RegisterClientCommandsEvent;
+import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
+import net.minecraftforge.fml.common.Mod;
 
-@Mod(value = Framework.MOD_ID, dist = Dist.CLIENT)
-@EventBusSubscriber(modid = Framework.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-public class FrameworkNeoForge {
-    public FrameworkNeoForge() {
+@Mod(Framework.MOD_ID)
+@Mod.EventBusSubscriber(modid = Framework.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+public class FrameworkForge {
+    public FrameworkForge() {
         // Config screen
-        ModLoadingContext.get().registerExtensionPoint(IConfigScreenFactory.class,
-                () -> (mc, parent) -> ConfigScreenProvider.getConfigScreen(parent));
+        ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class,
+                () -> new ConfigScreenHandler.ConfigScreenFactory(
+                        (minecraft, parent) -> ConfigScreenProvider.getConfigScreen(parent))
+        );
 
         // Main initialization
         Framework.init();
@@ -43,7 +44,7 @@ public class FrameworkNeoForge {
         event.register(Framework.EXAMPLE_KEY);
     }
 
-    @EventBusSubscriber(modid = Framework.MOD_ID, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = Framework.MOD_ID, value = Dist.CLIENT)
     static class ClientEventHandler {
         // Commands
         @SubscribeEvent
@@ -54,8 +55,10 @@ public class FrameworkNeoForge {
 
         // Tick events
         @SubscribeEvent
-        public static void clientTickEvent(ClientTickEvent.Post event) {
-            Framework.onEndTick(Minecraft.getInstance());
+        public static void clientTickEvent(TickEvent.ClientTickEvent event) {
+            if (event.phase.equals(TickEvent.Phase.END)) {
+                Framework.onEndTick(Minecraft.getInstance());
+            }
         }
     }
 }
