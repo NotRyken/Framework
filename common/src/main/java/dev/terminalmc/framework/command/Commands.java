@@ -46,7 +46,7 @@ public class Commands<S> extends CommandDispatcher<S> {
                                     MutableComponent msg = Framework.PREFIX.copy();
                                     msg.append(word);
 
-                                    mc.player.sendSystemMessage(msg);
+                                    mc.gui.getChat().addMessage(msg);
                                     return Command.SINGLE_SUCCESS;
                                 })
                         )
@@ -60,7 +60,7 @@ public class Commands<S> extends CommandDispatcher<S> {
                                             MutableComponent msg = Framework.PREFIX.copy();
                                             msg.append(item.getDescription());
 
-                                            mc.player.sendSystemMessage(msg);
+                                            mc.gui.getChat().addMessage(msg);
                                             return Command.SINGLE_SUCCESS;
                                         })
                                 )
@@ -73,7 +73,7 @@ public class Commands<S> extends CommandDispatcher<S> {
                                             MutableComponent msg = Framework.PREFIX.copy();
                                             msg.append(Component.literal(color.getName()).withStyle(color));
 
-                                            mc.player.sendSystemMessage(msg);
+                                            mc.gui.getChat().addMessage(msg);
                                             return Command.SINGLE_SUCCESS;
                                         })
                                 )
