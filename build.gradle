@@ -140,12 +140,9 @@ String versionChangelog() {
     if ("${mod_version}".startsWith(lines.get(2).substring(3))) {
         for (int i = 4; i < lines.size(); i++) {
             String line = lines.get(i)
-            if (line.isBlank()) {
-                // pass
-            } else if (line.startsWith("## ")) {
+            if (line.startsWith("## ")) {
                 break
-            }
-            else {
+            } else if (!line.isBlank()) {
                 if (!builder.isEmpty()) builder.append("\n")
                 builder.append(line)
             }
