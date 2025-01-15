@@ -1,9 +1,6 @@
 {
   "framework.name": "Framework",
 
-  "modmenu.descriptionTranslation.framework": "${mod_description}",
-  "fml.menu.mods.info.description.framework": "${mod_description}",
-
   "key.framework.group": "Framework",
   "key.framework.group.example": "Example Key",
 
