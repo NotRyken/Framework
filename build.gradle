@@ -150,7 +150,7 @@ String versionChangelog() {
         }
     } else {
         throw new IllegalArgumentException(
-                String.format("Mod version '%s' does not match with changelog version '%s'",
+                String.format("Mod version '%s' does not match changelog version '%s'",
                         mod_version, lines.get(2).substring(3)))
     }
     return builder.toString()
