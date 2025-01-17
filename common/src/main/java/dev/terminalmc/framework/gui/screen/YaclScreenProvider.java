@@ -17,16 +17,18 @@ import dev.isxander.yacl3.gui.YACLScreen;
 import dev.terminalmc.framework.Framework;
 import dev.terminalmc.framework.config.Config;
 import net.minecraft.ChatFormatting;
-import net.minecraft.ResourceLocationException;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 
 import java.awt.Color;
 import java.util.List;
+import java.util.Optional;
 
 import static dev.terminalmc.framework.util.Localization.localized;
 
@@ -389,11 +391,8 @@ public class YaclScreenProvider {
 
     // Special option utils
     private static Item asItem(String s) {
-        try {
-            return BuiltInRegistries.ITEM.get(ResourceLocation.parse(s));
-        } catch (ResourceLocationException e) {
-            return BuiltInRegistries.ITEM.get(BuiltInRegistries.ITEM.getDefaultKey());
-        }
+        Optional<Holder.Reference<Item>> item = BuiltInRegistries.ITEM.get(ResourceLocation.parse(s));
+        return item.map(Holder.Reference::value).orElse(Items.AIR);
     }
 
     private static String asString(Item i) {

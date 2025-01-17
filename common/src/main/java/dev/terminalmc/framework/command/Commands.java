@@ -58,7 +58,7 @@ public class Commands<S> extends CommandDispatcher<S> {
                                             Item item = ItemArgument.getItem(ctx, "item").getItem();
 
                                             MutableComponent msg = Framework.PREFIX.copy();
-                                            msg.append(item.getDescription());
+                                            msg.append(item.getName());
 
                                             mc.gui.getChat().addMessage(msg);
                                             return Command.SINGLE_SUCCESS;
